@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "url": "https://res.klook.com/image/upload/v1627267161/2021%20klook%20icon_category/exp%20new%20frontend%20tree%20icon/icon_category_experiences_l1_attractions_tickets_bg48.webp",
+    "title": "熱門票券"
+  },
+  {
+    "id": 2,
+    "url": "https://res.klook.com/image/upload/v1623918925/2021%20klook%20icon_category/icon_category_more_to_explore_l1_food_dining_bg48.webp",
+    "title": "美食品嚐"
+  },
+  {
+    "id": 3,
+    "url": "https://res.klook.com/image/upload/v1623918926/2021%20klook%20icon_category/icon_category_stays_l1_hotels_more_bg48.webp",
+    "title": "飯店"
+  },
+  {
+    "id": 4,
+    "url": "https://res.klook.com/image/upload/v1627267164/2021%20klook%20icon_category/exp%20new%20frontend%20tree%20icon/icon_category_experiences_l2_spa_massages_bg48.webp",
+    "title": "按摩"
+  },
+  {
+    "id": 5,
+    "url": "https://res.klook.com/image/upload/v1627267161/2021%20klook%20icon_category/exp%20new%20frontend%20tree%20icon/icon_category_experiences_l1_tours_sightseeing_bg48.webp",
+    "title": "行程觀光"
+  },
+  {
+    "id": 6,
+    "url": "https://res.klook.com/image/upload/v1623918928/2021%20klook%20icon_category/icon_category_transport_l2_Taiwan_intercity_buses_bg48.webp",
+    "title": "客運巴士"
+  },
+  {
+    "id": 7,
+    "url": "https://res.klook.com/image/upload/v1623918929/2021%20klook%20icon_category/icon_category_transport_l2_Taiwan_Trains_bg48.webp",
+    "title": "高鐵"
+  },
+  {
+    "id": 8,
+    "url": "https://res.klook.com/image/upload/v1623918927/2021%20klook%20icon_category/icon_category_transport_l1_car_rentals_bg48.webp",
+    "title": "租車"
+  },
+  {
+    "id": 9,
+    "url": "https://res.klook.com/image/upload/v1627267164/2021%20klook%20icon_category/exp%20new%20frontend%20tree%20icon/icon_category_experiences_l2_museums_exhibitions_bg48.webp",
+    "title": "博物館"
+  }
+]
