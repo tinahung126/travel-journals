@@ -7,6 +7,7 @@
       <Menu />
       <EventCategory />
       <BannerSlider />
+      <SearchNearByBanner class="mt-8" />
     </div>
   </div>
 </template>
@@ -14,17 +15,17 @@
 <script>
 import Hero from './../components/Hero.vue'
 import Menu from './../components/Menu.vue'
+import SearchNearByBanner from './../components/SearchNearByBanner.vue'
 import EventCategory from './../components/EventCategory.vue'
 import BannerSlider from './../components/BannerSlider.vue'
-import 'vueperslides/dist/vueperslides.css'
-
 export default {
   name: 'Home',
   components: {
     Hero,
     Menu,
     EventCategory,
-    BannerSlider
+    BannerSlider,
+    SearchNearByBanner
   }
 
 }
