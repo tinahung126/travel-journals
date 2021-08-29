@@ -19,7 +19,6 @@ export default {
 }
 </script>
 <style lang="scss">
-
 .navbar{
   position: fixed;
   width: 100%;

@@ -16,6 +16,7 @@ import Hero from './../components/Hero.vue'
 import Menu from './../components/Menu.vue'
 import EventCategory from './../components/EventCategory.vue'
 import BannerSlider from './../components/BannerSlider.vue'
+import 'vueperslides/dist/vueperslides.css'
 
 export default {
   name: 'Home',
