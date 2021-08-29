@@ -9,6 +9,7 @@
       <BannerSlider />
       <SearchNearByBanner class="mt-8" />
       <TopCities />
+      <TopProducts />
     </div>
   </div>
 </template>
@@ -20,6 +21,7 @@ import SearchNearByBanner from './../components/SearchNearByBanner.vue'
 import EventCategory from './../components/EventCategory.vue'
 import BannerSlider from './../components/BannerSlider.vue'
 import TopCities from '@/components/TopCities.vue'
+import TopProducts from './../components/TopProducts.vue'
 export default {
   name: 'Home',
   components: {
@@ -28,7 +30,8 @@ export default {
     EventCategory,
     BannerSlider,
     SearchNearByBanner,
-    TopCities
+    TopCities,
+    TopProducts
   }
 
 }
