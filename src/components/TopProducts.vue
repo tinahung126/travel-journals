@@ -2,7 +2,7 @@
   <v-container
     class="ma-0"
   >
-    <h2 class="ml-3">
+    <h2 class="ml-2">
       Top 10 熱門商品
     </h2>
 
@@ -125,11 +125,15 @@ export default {
       items: topProductsList,
       settings: {
         dots: false,
-        infinite: true,
-        centerMode: true,
+        infinite: false,
         slidesToShow: 1,
         slidesToScroll: 1,
+        focusOnSelect: true,
+        touchThreshold: 5,
+        speed: 500,
+        centerPadding: '0px',
         variableWidth: true
+
       }
 
     }
@@ -139,10 +143,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import '../assets/scss/main.scss';
-.slick, .slick-list{
-  height: 350px;
-  overflow: hidden;
-}
+
 .v-card{
   position: relative;
   z-index: 1;
@@ -185,5 +186,11 @@ export default {
     }
   }
 }
-
+.slick-slide {
+    margin: 0 10px !important;
+}
+/* the parent */
+.slick-list {
+    margin: 0 -10px !important;
+}
 </style>

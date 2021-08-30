@@ -28,4 +28,11 @@ export default {
   width: 100%;
   z-index: 999;
 }
+.slick-slide {
+  padding-right:10px !important;
+}
+/* the parent */
+.slick-list{
+  padding-left: 0px;
+}
 </style>
