@@ -1,111 +1,116 @@
 <template>
-  <div>
+  <v-container
+    class="ma-0"
+  >
     <h2 class="ml-3">
       Top 10 熱門商品
     </h2>
 
     <VueSlickCarousel
-      class="slick"
+      class="slick ma-0 pa-0"
       v-bind="settings"
     >
-      <v-card
+      <div
         v-for="item in items"
         :key="item.rank"
-        :loading="loading"
-        class="mx-auto mb-4 ml-3"
-        max-width="275px"
-        elevation="3"
-        rounde="5"
       >
-        <template slot="progress">
-          <v-progress-linear
-            color="deep-purple"
-            height="10"
-            indeterminate
-          />
-        </template>
-
-        <v-img
-          height="160"
-          cover
-          :src="item.src"
-        />
-        <v-img
-          width="44px"
-          class="top-label"
-          src="https://cdn.kkday.com/m-web/assets/img/icons/ic_top10_label.svg"
+        <v-card
+          :loading="loading"
+          class="mx-auto mb-4 mr-3"
+          width="275px"
+          elevation="3"
+          rounde="5"
         >
-          {{ item.rank }}
-        </v-img>
-        <div class="card__title d-flex pa-2 mx-1">
-          <h3 class="text-subtitle-1 font-weight-medium">
-            <v-icon
-              color="cyan"
-              class="mt-1"
-              dense
-            >
-              mdi-flash
-            </v-icon>
-            {{ item.title }}
-          </h3>
-        </div>
+          <template slot="progress">
+            <v-progress-linear
+              color="deep-purple"
+              height="10"
+              indeterminate
+            />
+          </template>
 
-        <v-card-text class="mx-1 pr-3">
-          <v-row>
-            <v-icon
-              x-small
-              color="grey lighten-1"
-            >
-              mdi-fire
-            </v-icon>
-            <span class="grey--text text--darken-1 ml-1">
-              {{ item.ordered }} 個已訂購
-            </span>
-          </v-row>
-          <v-row class="mt-4">
-            <v-icon
-              x-small
-              color="grey lighten-1"
-            >
-              mdi-map-marker
-            </v-icon>
-            <span class="grey--text text--darken-1 ml-1">
-              {{ item.location }}
-            </span>
-          </v-row>
-          <v-row
-            align="center"
-            class="mt-4 mr-1 d-flex justify-space-between "
+          <v-img
+            height="160"
+            cover
+            :src="item.src"
+          />
+          <v-img
+            width="44px"
+            class="top-label"
+            src="https://cdn.kkday.com/m-web/assets/img/icons/ic_top10_label.svg"
           >
-            <div class=" d-flex align-center">
-              <v-rating
-                :value="item.rating"
+            {{ item.rank }}
+          </v-img>
+          <div class="card__title d-flex pa-2 mx-1">
+            <h3 class="text-subtitle-1 font-weight-medium">
+              <v-icon
                 color="cyan"
+                class="mt-1"
                 dense
-                half-increments
-                readonly
-                size="14"
-              />
-
-              <div class="grey--text ms-2">
-                ({{ item.ratingCount }})
-              </div>
-            </div>
-            <div class="price text-overline">
-              TWD
-              <span class="cyan--text text-body-1 font-weight-bold">{{ item.price }}</span>
-              <div
-                v-if="item.originPrice"
-                class="price--origin text-decoration-line-through grey--text text--light-1"
               >
-                TWD {{ item.originPrice }}
+                mdi-flash
+              </v-icon>
+              {{ item.title }}
+            </h3>
+          </div>
+
+          <v-card-text class="mx-1 pr-3">
+            <v-row>
+              <v-icon
+                x-small
+                color="grey lighten-1"
+              >
+                mdi-fire
+              </v-icon>
+              <span class="grey--text text--darken-1 ml-1">
+                {{ item.ordered }} 個已訂購
+              </span>
+            </v-row>
+            <v-row class="mt-4">
+              <v-icon
+                x-small
+                color="grey lighten-1"
+              >
+                mdi-map-marker
+              </v-icon>
+              <span class="grey--text text--darken-1 ml-1">
+                {{ item.location }}
+              </span>
+            </v-row>
+            <v-row
+              align="center"
+              class="mt-4 mr-1 d-flex justify-space-between "
+            >
+              <div class=" d-flex align-center">
+                <v-rating
+                  :value="Number(item.rating)"
+                  color="cyan"
+                  dense
+                  half-increments
+                  readonly
+                  size="14"
+                />
+
+                <div class="grey--text ms-2">
+                  ({{ item.ratingCount }})
+                </div>
               </div>
-            </div>
-          </v-row>
-        </v-card-text>
-      </v-card>
+              <div class="price text-overline">
+                TWD
+                <span class="cyan--text text-body-1 font-weight-bold">{{ item.price }}</span>
+                <div
+                  v-if="item.originPrice"
+                  class="price--origin text-decoration-line-through grey--text text--light-1"
+                >
+                  TWD {{ item.originPrice }}
+                </div>
+              </div>
+            </v-row>
+          </v-card-text>
+        </v-card>
+      </div>
     </VueSlickCarousel>
-  </div>
+  </v-container>
 </template>
 <script>
 import VueSlickCarousel from 'vue-slick-carousel'
@@ -119,13 +124,12 @@ export default {
     return {
       items: topProductsList,
       settings: {
-        centerMode: true,
-        centerPadding: '-230px',
-        focusOnSelect: true,
+        dots: false,
         infinite: true,
-        slidesToShow: 3,
+        centerMode: true,
+        slidesToShow: 1,
         slidesToScroll: 1,
-        speed: 500
+        variableWidth: true
       }
 
     }
@@ -135,6 +139,10 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import '../assets/scss/main.scss';
+.slick, .slick-list{
+  height: 350px;
+  overflow: hidden;
+}
 .v-card{
   position: relative;
   z-index: 1;

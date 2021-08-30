@@ -1,5 +1,5 @@
 <template>
-  <div class="ml-3">
+  <div class="ma-4">
     <h2>探索熱門城市</h2>
     <VueSlickCarousel
       class="slick"

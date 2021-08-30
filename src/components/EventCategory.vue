@@ -1,5 +1,5 @@
 <template>
-  <div class="px-2">
+  <div class="px-2 ma-1">
     <h2>熱門活動分類</h2>
     <v-container>
       <v-row class="category__wrapper">

@@ -1,5 +1,5 @@
 <template>
-  <v-container class="banner__wrapper">
+  <v-container class="banner__wrapper ma-1">
     <div>
       <VueSlickCarousel
         class="slick"
@@ -59,7 +59,7 @@ export default {
 }
 
 </script>
-<style  lang="scss">
+<style lang="scss" scoped>
 @import '../assets/scss/main.scss';
 .slick-list{
   padding: 0 !important;

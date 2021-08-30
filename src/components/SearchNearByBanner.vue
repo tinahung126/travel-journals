@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container class="ma-1">
     <a
       class="search__banner d-flex justify-space-between align-center pa-4"
       href=""

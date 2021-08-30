@@ -3,13 +3,14 @@
     <div class="hero__wrapper">
       <hero class="hero__wrapper__bg" />
     </div>
-    <div class="menu__wrapper my-8">
+    <div class="menu__wrapper my-8 ">
       <Menu />
       <EventCategory />
       <BannerSlider />
       <SearchNearByBanner class="mt-8" />
       <TopCities />
       <TopProducts />
+      <FooterLinks />
     </div>
   </div>
 </template>
@@ -22,6 +23,7 @@ import EventCategory from './../components/EventCategory.vue'
 import BannerSlider from './../components/BannerSlider.vue'
 import TopCities from '@/components/TopCities.vue'
 import TopProducts from './../components/TopProducts.vue'
+import FooterLinks from './../components/FooterLinks.vue'
 export default {
   name: 'Home',
   components: {
@@ -31,7 +33,8 @@ export default {
     BannerSlider,
     SearchNearByBanner,
     TopCities,
-    TopProducts
+    TopProducts,
+    FooterLinks
   }
 
 }
