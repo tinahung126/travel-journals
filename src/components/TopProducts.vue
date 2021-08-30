@@ -2,12 +2,10 @@
   <v-container
     class="ma-0"
   >
-    <h2 class="ml-2">
-      Top 10 熱門商品
-    </h2>
+    <h2> Top 10 熱門商品</h2>
 
     <VueSlickCarousel
-      class="slick ma-0 pa-0"
+      class="slick"
       v-bind="settings"
     >
       <div
@@ -16,7 +14,7 @@
       >
         <v-card
           :loading="loading"
-          class="mx-auto mb-4 mr-3"
+          class="mx-auto mb-4"
           width="275px"
           elevation="3"
           rounde="5"

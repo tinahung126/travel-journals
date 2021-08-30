@@ -9,6 +9,7 @@
         <div
           v-for="(item,i) in bannersItems"
           :key="i"
+          class="carousel__wrapper"
         >
           <img
             :src="item.src"
@@ -34,15 +35,17 @@ export default {
     return {
       settings: {
         dots: true,
-        dotsClass: 'slick-dots custom-dot-class',
-        edgeFriction: 0.35,
+        dotsClass: 'slick-dots',
+        // edgeFriction: 0.35,
         infinite: true,
-        speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        centerMode: true,
-        centerPadding: '30px',
-        focusOnSelect: true
+        focusOnSelect: true,
+        touchThreshold: 5,
+        speed: 500,
+        centerPadding: '0px',
+        variableWidth: true,
+        touchMove: true
 
       },
       bannersItems: [
@@ -61,8 +64,11 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import '../assets/scss/main.scss';
-.slick-list{
-  padding: 0 !important;
+.carousel__wrapper{
+  width: 315px;
+}
+.slick-slide {
+  padding-right:5px !important;
 }
 .slick__img{
   width: 315px;

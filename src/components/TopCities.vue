@@ -1,5 +1,7 @@
 <template>
-  <div class="ma-4">
+  <v-container
+    class="ma-0"
+  >
     <h2>探索熱門城市</h2>
     <VueSlickCarousel
       class="slick"
@@ -26,7 +28,7 @@
         </div>
       </div>
     </VueSlickCarousel>
-  </div>
+  </v-container>
 </template>
 <script>
 import VueSlickCarousel from 'vue-slick-carousel'
@@ -40,12 +42,16 @@ export default {
     return {
       Items: citiesList,
       settings: {
-        centerMode: true,
-        centerPadding: '-50px',
+        dots: false,
+        infinite: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
         focusOnSelect: true,
-        infinite: true,
-        slidesToShow: 3,
-        speed: 500
+        touchThreshold: 5,
+        speed: 500,
+        centerPadding: '0px',
+        variableWidth: true
+
       }
     }
   }
