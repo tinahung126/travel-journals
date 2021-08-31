@@ -12,6 +12,9 @@
       <TopProducts />
       <FooterLinks />
     </div>
+    <section>
+      <Footer />
+    </section>
   </div>
 </template>
 
@@ -24,6 +27,7 @@ import BannerSlider from './../components/BannerSlider.vue'
 import TopCities from '@/components/TopCities.vue'
 import TopProducts from './../components/TopProducts.vue'
 import FooterLinks from './../components/FooterLinks.vue'
+import Footer from './../components/Footer.vue'
 export default {
   name: 'Home',
   components: {
@@ -34,7 +38,8 @@ export default {
     SearchNearByBanner,
     TopCities,
     TopProducts,
-    FooterLinks
+    FooterLinks,
+    Footer
   }
 
 }
