@@ -1,14 +1,25 @@
 <template>
   <div>
     <v-app-bar
-      color="transparent"
+      :color="isScroll ? 'white' : 'transparent'"
       dense
-      dark
+      :dark="!isScroll"
       hide-on-scroll
       flat
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-toolbar-title>Go travel</v-toolbar-title>
+      <div class="logo d-flex align-center">
+        <v-img
+          v-if="isScroll"
+          max-width="60"
+          src="../assets/kkday_logo.svg"
+        />
+        <v-img
+          v-else
+          max-width="60"
+          src="../assets/kkday_logo_white.svg"
+        />
+      </div>
       <v-spacer />
     </v-app-bar>
     <v-navigation-drawer
@@ -48,10 +59,11 @@
 </template>
 <script>
 export default {
-  name: 'App',
+  name: 'Navbar',
 
   data: () => ({
     drawer: false,
+    isScroll: false,
     group: null,
     listItems: [
       {
@@ -71,10 +83,20 @@ export default {
       }
     ]
   }),
-
   watch: {
     group () {
       this.drawer = false
+    }
+  },
+  mounted () {
+    window.addEventListener('scroll', this.onScroll)
+  },
+  beforeDestroy () {
+    window.removeEventListener('scroll', this.onScroll)
+  },
+  methods: {
+    onScroll (e) {
+      this.isScroll = (document.documentElement.scrollTop > 50)
     }
   }
 }
@@ -83,6 +105,9 @@ export default {
 @import '@/assets/scss/main.scss';
 .navigation{
   position: fixed;
+}
+.logo{
+  height: 48px;
 }
 .close-btn{
   position: relative;
