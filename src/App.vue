@@ -23,6 +23,8 @@ export default {
 }
 </script>
 <style lang="scss">
+@import './assets/scss/main.scss';
+
 .navbar{
   position: fixed;
   width: 100%;
@@ -35,4 +37,16 @@ export default {
 .slick-list{
   padding-left: 0px;
 }
+.slick-track{
+  display: flex !important;
+  align-items: center !important;
+}
+.slick-dots{
+  padding-left: 0!important;
+}
+  .v-icon{
+    &.mdi-magnify{
+      color: $cyan !important;
+    }
+  }
 </style>

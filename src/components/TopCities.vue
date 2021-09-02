@@ -32,7 +32,7 @@
 </template>
 <script>
 import VueSlickCarousel from 'vue-slick-carousel'
-import citiesList from './../assets/citiesList.json'
+import citiesList from './../../public/jsonFiles/citiesList.json'
 export default {
   name: 'TopCities',
   components: {

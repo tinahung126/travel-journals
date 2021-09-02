@@ -18,7 +18,7 @@
   </v-container>
 </template>
 <script>
-import menuList from './../assets/menuList.json'
+import menuList from './../../public/jsonFiles/menuList.json'
 export default {
   name: 'Menu',
 

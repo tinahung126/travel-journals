@@ -112,7 +112,8 @@
 </template>
 <script>
 import VueSlickCarousel from 'vue-slick-carousel'
-import topProductsList from './../assets/topProductsList.json'
+import topProductsList from './../../public/jsonFiles/topProductsList.json'
+
 export default {
   name: 'TopProducts',
   components: {

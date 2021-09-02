@@ -16,6 +16,9 @@
             alt=""
             class="slick__img"
           >
+          <span
+            class="slick__title text-body-2 white--text font-weight-bold text-center"
+          >{{ item.title }}</span>
         </div>
       </VueSlickCarousel>
     </div>
@@ -24,6 +27,7 @@
 
 <script>
 import VueSlickCarousel from 'vue-slick-carousel'
+import promoBanner from './../../public/jsonFiles/promoBanner.json'
 
 export default {
 
@@ -38,24 +42,18 @@ export default {
         dotsClass: 'slick-dots',
         // edgeFriction: 0.35,
         infinite: true,
-        slidesToShow: 1,
+        slidesToShow: 3,
         slidesToScroll: 1,
         focusOnSelect: true,
         touchThreshold: 5,
         speed: 500,
         centerPadding: '0px',
+        centerMode: true,
         variableWidth: true,
         touchMove: true
 
       },
-      bannersItems: [
-        { id: 1, src: 'https://image.kkday.com/v2/image/get/w_1024%2Cc_fit%2Cq_55%2Ct_webp/s1.kkday.com/campaign_1545/20210723071945_wosHW/png' },
-        { id: 2, src: 'https://image.kkday.com/v2/image/get/w_1024%2Cc_fit%2Cq_55%2Ct_webp/s1.kkday.com/campaign_1545/20210822140328_PJuAs/jpg' },
-        { id: 3, src: 'https://image.kkday.com/v2/image/get/w_1024%2Cc_fit%2Cq_55%2Ct_webp/s1.kkday.com/campaign_1759/20210819035307_sZxbf/jpg' },
-        { id: 4, src: 'https://image.kkday.com/v2/image/get/w_1024%2Cc_fit%2Cq_55%2Ct_webp/s1.kkday.com/campaign_1774/20210806083019_41rGt/png' },
-        { id: 5, src: 'https://image.kkday.com/v2/image/get/w_1024%2Cc_fit%2Cq_55%2Ct_webp/s1.kkday.com/campaign_1760/20210729113053_56JfS/png' },
-        { id: 6, src: 'https://image.kkday.com/v2/image/get/w_1024%2Cc_fit%2Cq_55%2Ct_webp/s1.kkday.com/campaign_1545/20210723073547_uMyfx/jpg' }
-      ]
+      bannersItems: promoBanner
     }
   }
 
@@ -66,7 +64,17 @@ export default {
 @import '../assets/scss/main.scss';
 .carousel__wrapper{
   width: 315px;
+  position: relative;
+  .slick__title{
+    position: absolute;
+    bottom: 20px;
+    left: 15%;
+    right: 15%;
+    text-shadow: 0 1px 2px rgb(0 0 0 / 60%);
+
 }
+}
+
 .slick-slide {
   padding-right:5px !important;
 }
@@ -76,5 +84,14 @@ export default {
   object-fit: cover;
   border-radius: 5px;
 }
-
+.slick-current {
+  img{
+    height: 165px;
+  }
+}
+.slick-cloned{
+  img{
+    height: 150px;
+  }
+}
 </style>
