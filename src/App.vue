@@ -49,4 +49,8 @@ export default {
       color: $cyan !important;
     }
   }
+
+.v-overlay__scrim{
+  position: fixed;
+}
 </style>
