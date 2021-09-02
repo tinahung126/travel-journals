@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!-- mobile -->
+    <!-- mobile & laptop-->
     <v-app-bar
       :color="isScroll ? 'white' : 'transparent'"
       :dark="!isScroll"
@@ -26,10 +26,10 @@
       />
     </v-app-bar>
 
-    <!-- laptop -->
+    <!-- laptop & PC -->
     <v-app-bar
       color="white"
-      class="d-none d-sm-block d-md-none"
+      class="d-none d-sm-block px-8"
       flat
       dense
     >
@@ -39,8 +39,53 @@
       />
       <v-spacer />
       <v-app-bar-nav-icon
+        class="d-none d-sm-flex d-md-none"
         @click.stop="drawer = !drawer"
       />
+      <v-list
+        dense
+        class="py-0 hidden-sm-and-down"
+      >
+        <v-list-item-group class="d-flex py-0">
+          <v-menu
+            v-for="(item, i) in smSizeListItems"
+            :key="i"
+            content-class="my-menu"
+            offset-y
+            left
+          >
+            <template v-slot:activator="{ attrs, on }">
+              <v-list-item
+                v-bind="attrs"
+                class="menu__list"
+                v-on="on"
+              >
+                <v-list-item-title
+                  dense
+
+                  class="grey--text text--darken-1"
+                  v-text="item.title"
+                />
+              </v-list-item>
+            </template>
+            <v-list
+              v-if="item.details"
+              class="dropdown-list d-flex"
+            >
+              <v-list-item
+                v-for="(detail,j) in item.details"
+                :key="j"
+                link
+              >
+                <v-list-item-title
+                  class="text-body-2"
+                  v-text="detail"
+                />
+              </v-list-item>
+            </v-list>
+          </v-menu>
+        </v-list-item-group>
+      </v-list>
     </v-app-bar>
     <v-navigation-drawer
       v-model="drawer"
@@ -62,7 +107,7 @@
           active-class="deep-purple--text text--accent-4"
         >
           <v-list-item
-            v-for="item in ($vuetify.breakpoint.name ==='xs'? listItems : smupListItems)"
+            v-for="item in ($vuetify.breakpoint.name ==='xs'? listItems : smSizeListItems)"
             :key="item.id"
             class="px-4"
           >
@@ -96,7 +141,7 @@ export default {
     drawer: false,
     isScroll: false,
     group: null,
-    smupListItems: [{ title: '註冊/登入' }, { title: 'TWD' }, { title: '繁體中文' }],
+    smSizeListItems: [{ title: '註冊/登入' }, { title: 'TWD', details: ['USD 美元', 'JPY 日圓', 'KRW 韓圓', 'THB 泰銖'] }, { title: '繁體中文', details: ['English', '日本語', '한국어', 'ไทย'] }],
     listItems: [
       {
         id: 1,
@@ -153,4 +198,51 @@ export default {
     background: $border-gray;
   }
 }
+.my-menu {
+  contain: initial;
+  overflow: visible;
+  border-radius: 10px;
+  margin-top: 3px;
+
+}
+.my-menu::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 10px;
+  transform: translateY(-100%);
+  width: 10px;
+  height: 13px;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 8px solid #fff;
+}
+.dropdown-list{
+  border-radius: 10px !important;
+  box-shadow: 0 2px 20px rgb(0 0 0 / 15%)!important;
+}
+.theme--light{
+  .menu__list{
+  &.v-list-item--active{
+  &:focus::before{
+    opacity: 0;
+  }
+  &:hover::before{
+    opacity: 0;
+  }
+  &::before{
+    opacity: 0;
+  }
+  }
+  &.v-list-item{
+    &:focus::before{
+      opacity: 0;
+    }
+    &:hover::before{
+      opacity: 0;
+    }
+  }
+}
+}
+
 </style>
