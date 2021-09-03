@@ -3,7 +3,7 @@
     <div class="hero__wrapper">
       <hero class="hero__wrapper__bg" />
     </div>
-    <div class="menu__wrapper my-8 ">
+    <div class="menu__wrapper my-8 px-sm-12 px-md-0">
       <Menu />
       <EventCategory />
       <BannerSlider />

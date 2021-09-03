@@ -53,4 +53,27 @@ export default {
 .v-overlay__scrim{
   position: fixed;
 }
+.hero__container__search__searchbar{
+  .v-input__slot{
+    padding-right:0px !important;
+
+  }
+.v-input__append-inner{
+    width: 10%;
+    height: 48px;
+  .v-input__icon--append {
+    background: $cyan;
+    width: 10%;
+    height: 48px;
+    border-radius: 0 3px 3px 0!important;
+    .v-icon {
+      &.mdi-magnify{
+        color: white !important;
+      }
+
+    }
+  }
+  }
+}
+
 </style>
