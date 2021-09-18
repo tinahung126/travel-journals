@@ -8,10 +8,11 @@
     <section class="hero__wrapper">
       <hero />
     </section>
-    <div class="menu__wrapper my-8 px-sm-12 px-md-0">
+    <div class="menu__wrapper my-8 px-sm-8 px-md-0">
       <Menu class="sd-flex d-sm-none" />
       <EventCategory />
-      <BannerSlider />
+      <BannerSlider class="d-none d-sm-block" />
+      <BannerSliderMb class="d-block d-sm-none" />
       <SearchNearByBanner class="mt-8" />
       <TopCities />
       <TopProducts />
@@ -30,6 +31,7 @@ import MenuBar from './../components/MenuBar.vue'
 import SearchNearByBanner from './../components/SearchNearByBanner.vue'
 import EventCategory from './../components/EventCategory.vue'
 import BannerSlider from './../components/BannerSlider.vue'
+import BannerSliderMb from './../components/BannerSliderMb.vue'
 import TopCities from '@/components/TopCities.vue'
 import TopProducts from './../components/TopProducts.vue'
 import FooterLinks from './../components/FooterLinks.vue'
@@ -41,6 +43,7 @@ export default {
     Menu,
     EventCategory,
     BannerSlider,
+    BannerSliderMb,
     SearchNearByBanner,
     TopCities,
     TopProducts,

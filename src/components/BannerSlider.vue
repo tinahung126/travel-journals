@@ -1,25 +1,49 @@
 <template>
-  <v-container class="banner__wrapper">
+  <v-container class="banner__wrapper__pc">
     <div>
       <VueSlickCarousel
         class="slick"
         v-bind="settings"
-        :dots="true"
+        arrows="true"
       >
         <div
           v-for="(item,i) in bannersItems"
           :key="i"
           class="carousel__wrapper"
         >
-          <img
-            :src="item.src"
-            alt=""
-            class="slick__img"
-          >
-          <span
-            class="slick__title text-body-2 white--text font-weight-bold text-center"
-          >{{ item.title }}</span>
+          <div class="img">
+            <img
+              :src="item.src"
+              alt=""
+              class="slick__img"
+            >
+          </div>
+          <div class="slick__title">
+            <span
+              class=" text-body-2 white--text"
+            >{{ item.title }}
+            </span>
+            <span class="mt-2 text-body-2 white--text font-weight-bold">
+              更多內容
+              <v-icon
+                color="white"
+                small
+              >mdi-chevron-right</v-icon>
+            </span>
+          </div>
         </div>
+        <template #prevArrow="arrowOption">
+          <div class="custom-arrow">
+            <v-icon>mdi-chevron-left</v-icon>
+            {{ arrowOption.currentSlide }}/{{ arrowOption.slideCount }}
+          </div>
+        </template>
+        <template #nextArrow="arrowOption">
+          <div class="custom-arrow">
+            {{ arrowOption.currentSlide }}/{{ arrowOption.slideCount }}
+            <v-icon>mdi-chevron-right</v-icon>
+          </div>
+        </template>
       </VueSlickCarousel>
     </div>
   </v-container>
@@ -38,17 +62,14 @@ export default {
   data () {
     return {
       settings: {
-        dots: true,
-        dotsClass: 'slick-dots',
         // edgeFriction: 0.35,
-        infinite: true,
-        slidesToShow: 3,
+        arrows: true,
+        dots: false,
+        infinite: false,
+        slidesPerRow: 2,
+        touchThreshold: 2,
         slidesToScroll: 1,
-        focusOnSelect: true,
-        touchThreshold: 5,
         speed: 500,
-        centerPadding: '0px',
-        centerMode: true,
         variableWidth: true,
         touchMove: true
 
@@ -63,35 +84,83 @@ export default {
 <style lang="scss" scoped>
 @import '../assets/scss/main.scss';
 .carousel__wrapper{
-  width: 315px;
   position: relative;
+  padding-right: 5px;
+  .img{
+    width: calc(100% - 5px);
+    height: 100%;
+    border-radius: 5px;
+    &::after{
+      content: '';
+      width: calc(100% - 10px);
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 5px;
+      background: black;
+      opacity: 0;
+      transition: opacity 0.3s ease-in;
+    }
+  }
+
   .slick__title{
+    display: flex;
+    flex-direction: column;
+    display: none;
     position: absolute;
-    bottom: 20px;
-    left: 15%;
-    right: 15%;
-    text-shadow: 0 1px 2px rgb(0 0 0 / 60%);
+    bottom: 50%;
+    transform: translateY(50%);
+    left: 5%;
+    right: 5%;
+    flex-wrap: wrap;
+    line-height: 16px;
+}
+  &:hover {
+    >.img{
+      overflow: hidden;
+
+      &::after{
+        opacity: 0.4
+      }
+      img{
+        filter:blur(8px);
+    }
+    }
+    .slick__title {
+      display: flex;
+  }
+  }
 
 }
-}
 
-.slick-slide {
-  padding-right:5px !important;
-}
 .slick__img{
-  width: 315px;
-  height: 150px;
+  width: 100%;
+  height: 180px;
   object-fit: cover;
   border-radius: 5px;
 }
-.slick-current {
-  img{
-    height: 165px;
+.custom-arrow{
+  position: absolute;
+  background: white;
+  box-shadow: 0 3px 15px rgb(0 0 0 / 15%);
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  &.slick-next{
+    right: -35px;
   }
-}
-.slick-cloned{
-  img{
-    height: 150px;
+  &.slick-prev{
+    left: -50px;
+    z-index: 1;
+  }
+  &.slick-prev::before, &.slick-next::before{
+    content: none;
+  }
+  &.slick-disabled{
+    display: none;
   }
 }
 </style>
