@@ -1,5 +1,5 @@
 <template>
-  <v-container class="banner__wrapper ma-1">
+  <v-container class="banner__wrapper">
     <div>
       <VueSlickCarousel
         class="slick"

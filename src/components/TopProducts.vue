@@ -1,6 +1,6 @@
 <template>
   <v-container
-    class="ma-0"
+    class=""
   >
     <h2> Top 10 熱門商品</h2>
 

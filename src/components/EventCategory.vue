@@ -1,35 +1,33 @@
 <template>
-  <div class="px-2 ma-1">
+  <v-container>
     <h2>熱門活動分類</h2>
-    <v-container>
-      <v-row class="category__wrapper">
-        <v-col
-          v-for="item in categoryList"
-          :key="item.id"
-          class="px-1"
-          cols="4"
-        >
-          <v-hover v-slot="{ hover }">
-            <v-card
-              class="card"
-              :class="{ 'on-hover': !hover }"
-              elevation="3"
-            >
-              <v-img
-                :src="item.img"
-              />
+    <v-row class="category__wrapper px-3">
+      <v-col
+        v-for="item in categoryList"
+        :key="item.id"
+        class="px-1"
+        cols="4"
+      >
+        <v-hover v-slot="{ hover }">
+          <v-card
+            class="card"
+            :class="{ 'on-hover': !hover }"
+            elevation="3"
+          >
+            <v-img
+              :src="item.img"
+            />
 
-              <v-card-title
-                class="card__subtitle px-2 py-1"
-              >
-                {{ item.title }}
-              </v-card-title>
-            </v-card>
-          </v-hover>
-        </v-col>
-      </v-row>
-    </v-container>
-  </div>
+            <v-card-title
+              class="card__subtitle px-2 py-1"
+            >
+              {{ item.title }}
+            </v-card-title>
+          </v-card>
+        </v-hover>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 <script>
 export default {

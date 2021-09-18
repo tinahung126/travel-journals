@@ -1,10 +1,15 @@
 <template>
   <div class="main__comtainer">
-    <div class="hero__wrapper">
-      <hero class="hero__wrapper__bg" />
-    </div>
+    <section
+      class="mt-12 d-none d-sm-flex"
+    >
+      <MenuBar />
+    </section>
+    <section class="hero__wrapper">
+      <hero />
+    </section>
     <div class="menu__wrapper my-8 px-sm-12 px-md-0">
-      <Menu />
+      <Menu class="sd-flex d-sm-none" />
       <EventCategory />
       <BannerSlider />
       <SearchNearByBanner class="mt-8" />
@@ -21,6 +26,7 @@
 <script>
 import Hero from './../components/Hero.vue'
 import Menu from './../components/Menu.vue'
+import MenuBar from './../components/MenuBar.vue'
 import SearchNearByBanner from './../components/SearchNearByBanner.vue'
 import EventCategory from './../components/EventCategory.vue'
 import BannerSlider from './../components/BannerSlider.vue'
@@ -39,7 +45,8 @@ export default {
     TopCities,
     TopProducts,
     FooterLinks,
-    Footer
+    Footer,
+    MenuBar
   }
 
 }

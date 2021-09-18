@@ -1,7 +1,7 @@
 <template>
   <div class="hero__container">
     <div
-      class="hero__container__bg mt-sm-12"
+      class="hero__container__bg "
       :class="{hero__container__bg__large: $vuetify.breakpoint.name !=='xs'}"
     />
 
@@ -12,7 +12,7 @@
       <h5 class="d-flex d-sm-none">
         你要去哪裡？
       </h5>
-      <h5 class="d-none d-sm-flex textcenter justify-center ">
+      <h5 class="d-none d-sm-flex textcenter justify-center mt-2">
         帶你深入探索有趣又獨特的旅遊體驗行程
       </h5>
       <div class="hero__container__search__searchbar">

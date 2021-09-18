@@ -1,6 +1,6 @@
 <template>
   <v-container
-    class="ma-0"
+    class=""
   >
     <h2>探索熱門城市</h2>
     <VueSlickCarousel

@@ -1,5 +1,5 @@
 <template>
-  <div class="ma-4">
+  <v-container class="">
     <div
       v-for="(item,i) in items"
       :key="i"
@@ -32,7 +32,7 @@
         </v-icon>
       </div>
     </div>
-  </div>
+  </v-container>
 </template>
 
 <script>

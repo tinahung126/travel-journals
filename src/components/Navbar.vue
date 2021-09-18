@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main">
     <!-- mobile & laptop-->
     <v-app-bar
       :color="isScroll ? 'white' : 'transparent'"
@@ -243,6 +243,11 @@ export default {
     }
   }
 }
+}
+@media screen and (min-width: 600px) {
+  .main{
+    border-bottom: 1px solid #EEEEEE;
+  }
 }
 
 </style>

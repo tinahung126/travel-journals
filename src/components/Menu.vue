@@ -8,7 +8,7 @@
           class="card__item d-flex flex-column justify-center align-center"
         >
           <img
-            :src="item.url"
+            :src="require(`../assets/icons/${item.url}.svg`)"
             alt=""
           >
           <span class="card__item__title">{{ item.title }}</span>
@@ -24,12 +24,11 @@ export default {
 
   data () {
     return {
-      cardItems: menuList
+      cardItems: menuList,
+      lists: []
     }
-  },
-  created () {
-
   }
+
 }
 </script>
 <style lang="scss" scoped>
