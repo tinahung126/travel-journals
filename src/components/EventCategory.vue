@@ -1,32 +1,46 @@
 <template>
   <v-container>
-    <h2>熱門活動分類</h2>
-    <v-row class="category__wrapper px-3">
-      <v-col
-        v-for="item in categoryList"
-        :key="item.id"
-        class="px-1"
-        cols="4"
-      >
-        <v-hover v-slot="{ hover }">
-          <v-card
-            class="card"
-            :class="{ 'on-hover': !hover }"
-            elevation="3"
-          >
-            <v-img
-              :src="item.img"
-            />
+    <h2 class="text-h5 font-weight-bold ml-0">
+      熱門活動分類
+    </h2>
 
-            <v-card-title
-              class="card__subtitle px-2 py-1"
+    <v-sheet
+      class=" category__wrapper pa-0"
+      width="100%"
+    >
+      <v-slide-group
+        v-model="model"
+        class="custom"
+        :show-arrows="$vuetify.breakpoint.smAndUp"
+      >
+        <v-slide-item
+          v-for="item in categoryList"
+          :key="item.id"
+          class="ma-3"
+        >
+          <v-hover v-slot="{ hover }">
+            <v-card
+              class="card pa-0 ml-0"
+              :class="{ 'on-hover': !hover }"
+              elevation="6"
+              :width="$vuetify.breakpoint.xs ? 140 : 200"
+              :height="$vuetify.breakpoint.xs ? 150 : 200"
             >
-              {{ item.title }}
-            </v-card-title>
-          </v-card>
-        </v-hover>
-      </v-col>
-    </v-row>
+              <v-img
+                :src="item.img"
+                aspect-ratio="1.3"
+              />
+
+              <v-card-title
+                class="card__subtitle px-3 py-3 text-sm-subtitle-2"
+              >
+                {{ item.title }}
+              </v-card-title>
+            </v-card>
+          </v-hover>
+        </v-slide-item>
+      </v-slide-group>
+    </v-sheet>
   </v-container>
 </template>
 <script>
@@ -34,6 +48,7 @@ export default {
   name: 'EventCategory',
   data () {
     return {
+      model: null,
       categoryList: [
         {
           id: 1,
@@ -73,6 +88,7 @@ export default {
 </script>
 <style scoped lang="scss">
 @import '../assets/scss/main.scss';
+
  h2{
     margin-left: 4px;
   }
@@ -86,18 +102,19 @@ export default {
 
 .category__wrapper{
   flex-wrap: nowrap;
-  overflow-x: scroll;
   &::-webkit-scrollbar {
     display: none;
   }
   .card{
     box-shadow: 0 2px 8px rgb(60 64 67 / 20%);
+
     .card__subtitle{
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 1.5rem;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.5rem;
   }
-  }
+}
 
 }
+
 </style>

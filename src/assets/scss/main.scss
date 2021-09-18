@@ -15,3 +15,37 @@ h2{
   box-shadow: 0 0 4px rgb(0 0 0 / 20%);
   -webkit-box-shadow:0 0 4px rgb(0 0 0 / 20%);
 }
+  .v-slide-group__wrapper {
+    overflow: scroll !important;
+    padding: 20px;
+    margin: -20px;
+  }
+  .custom {
+    &.v-slide-group{
+      display: block;
+    }
+    > .v-slide-group__next, .v-slide-group__prev{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      .v-icon{
+        background: white !important;
+        box-shadow: 0 3px 15px rgb(0 0 0 / 15%);
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+      }
+      &--disabled{
+        display: none;
+      }
+    }
+    > .v-slide-group__next{      
+      right: -40px;
+    }
+    > .v-slide-group__prev{
+      left: -40px;
+      z-index: 1;
+      
+    }
+
+}
