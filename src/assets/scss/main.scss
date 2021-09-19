@@ -1,6 +1,7 @@
 $border-gray: #EEEEEE;
 $btn-gray: #aaa;
 $cyan:#00BCD4;
+$yellow:#FFB400;
 
 *{
   box-sizing: border-box;
@@ -49,5 +50,28 @@ h2{
     left: -40px;
     z-index: 1;
     
+  }
+}
+.custom-arrow{
+  position: absolute;
+  background: white;
+  box-shadow: 0 3px 15px rgb(0 0 0 / 15%);
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  &.slick-next{
+    right: -35px;
+  }
+  &.slick-prev{
+    left: -50px;
+    z-index: 1;
+  }
+  &.slick-prev::before, &.slick-next::before{
+    content: none;
+  }
+  &.slick-disabled{
+    display: none;
   }
 }

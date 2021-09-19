@@ -1,7 +1,5 @@
 <template>
-  <v-container
-    class=""
-  >
+  <v-container>
     <h2>探索熱門城市</h2>
     <div class="card__wrapper d-flex justify-center">
       <template
@@ -93,7 +91,6 @@ export default {
 @import '../assets/scss/main.scss';
 .card__wrapper{
   margin-left: -7.5px;
-  margin-right: -7.5px;
   position: relative;
   .chip__group{
     position: absolute;

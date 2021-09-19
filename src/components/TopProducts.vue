@@ -1,32 +1,27 @@
 <template>
-  <v-container
-    class=""
-  >
-    <h2> Top 10 熱門商品</h2>
+  <v-container>
+    <h2
+      class="text-h5 font-weight-bold ml-0 mb-5"
+    >
+      Top 10 熱門商品
+    </h2>
 
     <VueSlickCarousel
       class="slick"
+      :arrows="$vuetify.breakpoint.name !=='xs'"
+      :slides-to-show="size"
+      :slides-to-scroll="size"
       v-bind="settings"
     >
       <div
         v-for="item in items"
         :key="item.rank"
+        class="card__item"
       >
         <v-card
-          :loading="loading"
           class="mx-auto mb-4"
-          width="275px"
-          elevation="3"
-          rounde="5"
+          rounded="5"
         >
-          <template slot="progress">
-            <v-progress-linear
-              color="deep-purple"
-              height="10"
-              indeterminate
-            />
-          </template>
-
           <v-img
             height="160"
             cover
@@ -50,6 +45,16 @@
               </v-icon>
               {{ item.title }}
             </h3>
+            <div class="product__hint d-flex align-center">
+              <v-icon
+                color="white"
+                class="mx-1"
+                small
+              >
+                mdi-flash
+              </v-icon>
+              立即確認
+            </div>
           </div>
 
           <v-card-text class="mx-1 pr-3">
@@ -107,6 +112,18 @@
           </v-card-text>
         </v-card>
       </div>
+      <template #prevArrow="arrowOption">
+        <div class="custom-arrow">
+          <v-icon>mdi-chevron-left</v-icon>
+          {{ arrowOption.currentSlide }}/{{ arrowOption.slideCount }}
+        </div>
+      </template>
+      <template #nextArrow="arrowOption">
+        <div class="custom-arrow">
+          {{ arrowOption.currentSlide }}/{{ arrowOption.slideCount }}
+          <v-icon>mdi-chevron-right</v-icon>
+        </div>
+      </template>
     </VueSlickCarousel>
   </v-container>
 </template>
@@ -124,27 +141,46 @@ export default {
       items: topProductsList,
       settings: {
         dots: false,
-        infinite: false,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        focusOnSelect: true,
         touchThreshold: 5,
         speed: 500,
-        centerPadding: '0px',
-        variableWidth: true
+        infinite: false,
+        touchMove: true
 
       }
 
     }
+  },
+  computed: {
+    size () {
+      switch (this.$vuetify.breakpoint.name) {
+        case 'xs':
+          return 2
+        case 'sm':
+          return 2
+        case 'md':
+          return 3
+        case 'lg':
+          return 4
+        case 'xl':
+          return 4
+        default:
+          return 3
+      }
+    }
   }
-
 }
+
 </script>
 <style lang="scss" scoped>
 @import '../assets/scss/main.scss';
+.card__item{
+  width: 97% !important;
+}
 
 .v-card{
   position: relative;
+  border: 1px solid #eaeaea;
+  border-radius: 3px;
   z-index: 1;
   box-shadow: 0 0 4px rgb(0 0 0 / 20%) !important;
   .top-label{
@@ -158,8 +194,34 @@ export default {
     font-weight: 700;
     font-size: 18px;
   }
+
   .card__title{
     width: 75%;
+    position: relative;
+    .product__hint{
+      background: $cyan;
+      border-radius: 5px;
+      width: fit-content;
+      position: absolute;
+      padding: 5px 10px;
+      top: -20px;
+      left: -4px;
+      font-size: 12px;
+      color: white;
+      box-shadow: 0 0 5px rgb(0 0 0 / 30%);
+      opacity: 0;
+      transition: all .3s ease-in-out;
+      &::after{
+        position: absolute;
+        bottom: -16px;
+        left: 12%;
+        content: '';
+        border: 1px solid #000;
+        border-color: $cyan transparent  transparent  transparent ;
+        border-style: solid solid solid solid;
+        border-width: 8px;
+      }
+    }
     .v-icon{
       float: left;
     }
@@ -184,12 +246,28 @@ export default {
       right: 0;
     }
   }
+
 }
-.slick-slide {
-    margin: 0 10px !important;
+// Hover effect
+.v-card {
+  opacity: 1;
+  transition: opacity .3s ease-in-out;
+
+  &:hover{
+    opacity: 0.7;
+    h3{
+      i.v-icon.v-icon{
+        color: $yellow !important;
+        transform: rotateY(1turn);
+        transition: all .3s ease-in-out;
+      }
+    }
+
+    .product__hint{
+      top: -28px;
+      opacity: 1;
+    }
+  }
 }
-/* the parent */
-.slick-list {
-    margin: 0 -10px !important;
-}
+
 </style>
