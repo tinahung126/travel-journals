@@ -13,8 +13,9 @@
       <EventCategory />
       <BannerSlider class="d-none d-sm-block" />
       <BannerSliderMb class="d-block d-sm-none" />
-      <SearchNearByBanner class="mt-8" />
-      <TopCities />
+      <SearchNearByBanner class="mt-8 d-block d-sm-none" />
+      <TopCities class="d-none d-sm-block" />
+      <TopCitiesMb class="d-block d-sm-none" />
       <TopProducts />
       <FooterLinks />
     </div>
@@ -33,6 +34,7 @@ import EventCategory from './../components/EventCategory.vue'
 import BannerSlider from './../components/BannerSlider.vue'
 import BannerSliderMb from './../components/BannerSliderMb.vue'
 import TopCities from '@/components/TopCities.vue'
+import TopCitiesMb from '@/components/TopCitiesMb.vue'
 import TopProducts from './../components/TopProducts.vue'
 import FooterLinks from './../components/FooterLinks.vue'
 import Footer from './../components/Footer.vue'
@@ -46,6 +48,7 @@ export default {
     BannerSliderMb,
     SearchNearByBanner,
     TopCities,
+    TopCitiesMb,
     TopProducts,
     FooterLinks,
     Footer,

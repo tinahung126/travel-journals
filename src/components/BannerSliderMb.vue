@@ -1,7 +1,6 @@
 <template>
   <v-container class="banner__wrapper">
     <div>
-      asdsadasdsd
       <VueSlickCarousel
         class="slick"
         v-bind="settings"

@@ -3,41 +3,65 @@
     class=""
   >
     <h2>探索熱門城市</h2>
-    <VueSlickCarousel
-      class="slick"
-      v-bind="settings"
-    >
-      <div
-        v-for="(item,i) in Items"
-        :key="i"
-        class="slick__item "
+    <div class="card__wrapper d-flex justify-center">
+      <template
+        v-for="item in Items"
       >
-        <img
-          :src="item.url"
-          alt=""
-          class="slick__img card-shadow"
+        <v-hover
+          :key="item.id"
+          v-slot="{ hover }"
         >
-        <div class="img-overlay" />
-        <div
-          class="slick__title d-flex flex-column"
-        >
-          <span
-            class="text-h6 "
-          >{{ item.title }}</span>
-          <span class="text-subtitle-2">{{ item.subtitle }}</span>
-        </div>
-      </div>
-    </VueSlickCarousel>
+          <v-card
+            class="card mx-1"
+            :class="{ 'on-hover': hover ,'expanded': expandIndex === item.id, 'notExpand':expandIndex !== item.id}"
+            @mouseover="expandIndex = item.id"
+          >
+            <v-img
+              class="white--text align-end"
+              height="250px"
+              gradient="to bottom, transparent 60%, rgba(0,0,0,.7)"
+              :src="item.url"
+            >
+              <v-card-title class="city__name font-weight-black px-2 pb-0">
+                {{ item.title }}
+              </v-card-title>
+              <v-card-text class="px-1 ">
+                <div class="chip__group d-flex flex-nowrap">
+                  <v-chip
+                    class="py-3 px-2 mx-1"
+                    color="white"
+                    outlined
+                    small
+                  >
+                    交通 & 旅遊必備
+                  </v-chip>
+                  <v-chip
+                    color="white"
+                    outlined
+                    small
+                  >
+                    熱門票券
+                  </v-chip>
+                  <v-chip
+                    color="rgba(255, 255, 255, 0.4)"
+                    small
+                    dark
+                  >
+                    更多在地體驗
+                  </v-chip>
+                </div>
+              </v-card-text>
+            </v-img>
+          </v-card>
+        </v-hover>
+      </template>
+    </div>
   </v-container>
 </template>
 <script>
-import VueSlickCarousel from 'vue-slick-carousel'
 import citiesList from './../../public/jsonFiles/citiesList.json'
 export default {
   name: 'TopCities',
-  components: {
-    VueSlickCarousel
-  },
   data () {
     return {
       Items: citiesList,
@@ -52,7 +76,14 @@ export default {
         centerPadding: '0px',
         variableWidth: true
 
-      }
+      },
+      expandIndex: 1
+
+    }
+  },
+  methods: {
+    sayHi () {
+      console.log('hi')
     }
   }
 
@@ -60,35 +91,49 @@ export default {
 </script>
 <style  lang="scss" scoped>
 @import '../assets/scss/main.scss';
-.slick__img{
-  width: 150px;
-  object-fit: cover;
-  border-radius: 5px;
+.card__wrapper{
+  margin-left: -7.5px;
+  margin-right: -7.5px;
   position: relative;
+  .chip__group{
+    position: absolute;
+    bottom: -35px;
+    transition: bottom 0.35s ease;
+  }
+  .city__name{
+    position: absolute;
+    bottom:10px;
+    transition: bottom 0.35s ease;
+  }
+  .card{
+    width: calc((100% / 6 - 8px) * 2);
+    img{
+      margin: 0 -4px;
+    }
+    &.expanded{
+      width: calc((100% / 6 - 8px) * 2);
+      .chip__group{
+        bottom: 10px;
+      }
+      .city__name{
+        bottom: 45px;
+      }
+    }
+    &.notExpand{
+      width: calc(100% / 6 - 8px)
+    }
+  }
+}
+.v-card {
+  transition: all .35s ease-in;
+  opacity: 0.8;
 
 }
 
-.slick__item{
-  position: relative;
-  &::after{
-    position: absolute;
-    content: '';
-    top: 0;
-    left: 0;
-    background: linear-gradient(to bottom,transparent 50%, rgba(0,0,0,0.6));
-    width: 150px;
-    aspect-ratio: 1 / 1;
-    z-index: 0;
-    border-radius: 5px;
-  }
-  .slick__title{
-     z-index: 1;
-    position: absolute;
-    color: white;
-    bottom: 5%;
-    left: 5%;
-  }
+.v-card:not(.on-hover) {
+  width: calc(100% / 6 - 8px);
+  opacity: 1;
 
-}
+ }
 
 </style>

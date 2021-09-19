@@ -4,7 +4,6 @@
       <VueSlickCarousel
         class="slick"
         v-bind="settings"
-        arrows="true"
       >
         <div
           v-for="(item,i) in bannersItems"
