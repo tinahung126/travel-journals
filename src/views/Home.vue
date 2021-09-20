@@ -1,5 +1,7 @@
 <template>
-  <div class="main__comtainer">
+  <div
+    class="main__comtainer"
+  >
     <section
       class="mt-12 d-none d-sm-flex"
     >
@@ -8,15 +10,18 @@
     <section class="hero__wrapper">
       <hero />
     </section>
-    <div class="menu__wrapper my-8 px-sm-8 px-md-0">
+    <div class="menu__wrapper my-8 px-0">
       <Menu class="sd-flex d-sm-none" />
       <EventCategory />
       <BannerSlider class="d-none d-sm-block" />
       <BannerSliderMb class="d-block d-sm-none" />
       <SearchNearByBanner class="mt-8 d-block d-sm-none" />
       <TopCities class="d-none d-sm-block" />
-      <TopCitiesMb class="d-block d-sm-none" />
+      <TopCitiesMb class="d-block d-sm-none " />
       <TopProducts />
+      <section class="whykkday mt-16 pt-14 pb-8">
+        <WhyKKday />
+      </section>
       <FooterLinks />
     </div>
     <section>
@@ -36,6 +41,7 @@ import BannerSliderMb from './../components/BannerSliderMb.vue'
 import TopCities from '@/components/TopCities.vue'
 import TopCitiesMb from '@/components/TopCitiesMb.vue'
 import TopProducts from './../components/TopProducts.vue'
+import WhyKKday from './../components/WhyKKday.vue'
 import FooterLinks from './../components/FooterLinks.vue'
 import Footer from './../components/Footer.vue'
 export default {
@@ -50,14 +56,22 @@ export default {
     TopCities,
     TopCitiesMb,
     TopProducts,
+    WhyKKday,
     FooterLinks,
     Footer,
     MenuBar
+  },
+  data () {
+    return {
+    }
   }
 
 }
 </script>
 <style scoped lang="scss">
 @import '../assets/scss/main.scss';
+.whykkday{
+  background: $bg-gray;
+}
 
 </style>
