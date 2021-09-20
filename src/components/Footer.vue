@@ -6,8 +6,7 @@
       padless
       class="d-flex flex-column pt-10"
     >
-      <FooterHead />
-
+      <FooterHead class="d-none d-sm-block" />
       <FooterDetail class="d-none d-sm-block" />
       <FooterDetailMb class="d-block d-sm-none" />
       <FooterLicense />

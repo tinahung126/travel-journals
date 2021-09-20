@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <v-row class="footer mb-2">
+  <div class="footer__head px-15 px-md-2 py-8">
+    <v-row class="footer mb-2 px-12">
       <v-col
         class="footer__text "
         cols="12"
@@ -51,6 +51,9 @@
 
 <style scoped lang="scss">
 @import '../assets/scss/main.scss';
+.footer__head{
+  width: 100%;
+}
 .footer__subscribe{
   height: 38px;
   border-radius: 3px;

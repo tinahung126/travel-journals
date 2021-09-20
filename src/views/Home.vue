@@ -1,6 +1,6 @@
 <template>
   <div
-    class="main__comtainer"
+    class="main__container"
   >
     <section
       class="mt-12 d-none d-sm-flex"
@@ -10,7 +10,7 @@
     <section class="hero__wrapper">
       <hero />
     </section>
-    <div class="menu__wrapper my-8 px-0">
+    <div class="menu__wrapper mt-8 px-0">
       <Menu class="sd-flex d-sm-none" />
       <EventCategory />
       <BannerSlider class="d-none d-sm-block" />
