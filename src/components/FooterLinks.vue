@@ -9,7 +9,7 @@
       </h3>
       <ul
         class="country d-flex flex-wrap unexpand"
-        :class="{expand:(item.isExpand === true)}"
+        :class="{expand: ($vuetify.breakpoint.name !== 'xs') || (item.isExpand === true), 'unexpand':($vuetify.breakpoint.name === 'xs')}"
       >
         <li
           v-for="(city,j) in item.cities"
@@ -20,6 +20,7 @@
         </li>
       </ul>
       <div
+        v-if="($vuetify.breakpoint.name === 'xs')"
         class="expand-icon cyan--text d-flex align-start mt-2"
         @click.stop.prevent=" item.isExpand= !item.isExpand"
       >

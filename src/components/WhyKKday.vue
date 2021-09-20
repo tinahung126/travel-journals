@@ -3,11 +3,12 @@
     v-observe-visibility="visibilityChanged"
     class="px-15 px-md-2"
   >
-    <v-row class="mx-auto">
+    <v-row class="mx-auto ">
       <v-col
         cols="6"
         sm="12"
         md="6"
+        class="pl-0"
       >
         <div class="section-head">
           <h2 class="text-h5 font-weight-black mb-8">
@@ -21,7 +22,7 @@
           color="cyan"
           elevation="2"
           dark
-          class="px-12 py-6"
+          class="px-12 py-6 mt-3"
         >
           點我看更多
         </v-btn>

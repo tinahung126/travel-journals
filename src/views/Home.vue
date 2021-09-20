@@ -22,11 +22,11 @@
       <section class="whykkday mt-16 pt-14 pb-8 d-none d-sm-block">
         <WhyKKday />
       </section>
-      <FooterLinks />
+      <section class="footer">
+        <FooterLinks />
+        <Footer />
+      </section>
     </div>
-    <section>
-      <Footer />
-    </section>
   </div>
 </template>
 

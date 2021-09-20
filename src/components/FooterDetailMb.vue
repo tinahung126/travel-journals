@@ -2,7 +2,7 @@
   <v-card
     flat
     tile
-    class="white--text text-center flex-grow-1 px-15 px-md-2 "
+    class="white--text text-center flex-grow-1"
     color="grey darken-3"
     dark
   >

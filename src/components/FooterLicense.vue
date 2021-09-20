@@ -2,9 +2,10 @@
   <v-card
     flat
     tile
-    class=" lighten-1 white--text text-center flex-grow-1 py-5"
+    class=" lighten-1 white--text text-center flex-grow-1 py-5 px-15 px-md-2 "
     color="grey darken-4"
     dark
+    width="100%"
   >
     <v-card-text class="text-caption grey--text text--lighten-1 pt-0">
       此產品由 酷遊天股份有限公司 提供
