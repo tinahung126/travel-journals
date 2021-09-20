@@ -1,7 +1,5 @@
 <template>
-  <v-container
-    class=""
-  >
+  <v-container class="cities__wrapper">
     <h2>探索熱門城市</h2>
     <VueSlickCarousel
       class="slick"
@@ -45,9 +43,9 @@ export default {
         dots: false,
         infinite: false,
         slidesToShow: 1,
-        slidesToScroll: 1,
+        slidesToScroll: 2,
         focusOnSelect: true,
-        touchThreshold: 5,
+        touchThreshold: 2,
         speed: 500,
         centerPadding: '0px',
         variableWidth: true

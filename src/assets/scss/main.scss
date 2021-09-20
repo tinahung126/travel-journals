@@ -28,7 +28,8 @@ h2{
     display: block;
   }
   .v-slide-group__wrapper {
-    
+    overflow: scroll;
+
     width: 100%;
     padding: 10px;
     margin: -10px;
@@ -58,7 +59,13 @@ h2{
   }
 }
 }
+.banner__wrapper, .cities__wrapper{
+  .slick-slide {
+    padding-right:12px !important;
+  }
+  /* the parent */
 
+}
 .custom-arrow{
   position: absolute;
   background: white;
@@ -80,5 +87,10 @@ h2{
   }
   &.slick-disabled{
     display: none;
+  }
+}
+@media screen and (min-width: 600px) {
+  .v-slide-group__wrapper{
+    overflow: visible !important;
   }
 }

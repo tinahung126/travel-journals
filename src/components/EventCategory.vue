@@ -1,6 +1,6 @@
 <template>
-  <v-container class="px-15 px-md-2">
-    <h2 class="text-h5 font-weight-bold ml-0">
+  <v-container class="px-3 px-sm-15 px-md-2">
+    <h2 class="text-sm-h5 font-weight-sm-bold ml-0">
       熱門活動分類
     </h2>
     <v-sheet
@@ -87,6 +87,7 @@ export default {
 </script>
 <style scoped lang="scss">
 @import '../assets/scss/main.scss';
+
 .container{
   position: relative;
 }

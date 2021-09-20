@@ -1,5 +1,5 @@
 <template>
-  <v-container class="px-15 px-md-2">
+  <v-container class="px-3 px-sm-15 px-md-2">
     <div
       v-for="(item,i) in items"
       :key="i"

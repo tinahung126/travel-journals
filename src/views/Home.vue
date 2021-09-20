@@ -18,7 +18,8 @@
       <SearchNearByBanner class="mt-8 d-block d-sm-none" />
       <TopCities class="d-none d-sm-block" />
       <TopCitiesMb class="d-block d-sm-none " />
-      <TopProducts />
+      <TopProducts class="d-none d-sm-block" />
+      <TopProductsMb class="d-block d-sm-none " />
       <section class="whykkday mt-16 pt-14 pb-8 d-none d-sm-block">
         <WhyKKday />
       </section>
@@ -41,6 +42,7 @@ import BannerSliderMb from './../components/BannerSliderMb.vue'
 import TopCities from '@/components/TopCities.vue'
 import TopCitiesMb from '@/components/TopCitiesMb.vue'
 import TopProducts from './../components/TopProducts.vue'
+import TopProductsMb from './../components/TopProductsMb.vue'
 import WhyKKday from './../components/WhyKKday.vue'
 import FooterLinks from './../components/FooterLinks.vue'
 import Footer from './../components/Footer.vue'
@@ -56,6 +58,7 @@ export default {
     TopCities,
     TopCitiesMb,
     TopProducts,
+    TopProductsMb,
     WhyKKday,
     FooterLinks,
     Footer,
