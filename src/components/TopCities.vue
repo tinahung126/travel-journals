@@ -1,7 +1,11 @@
 <template>
-  <v-container>
-    <h2>探索熱門城市</h2>
-    <div class="card__wrapper d-flex justify-center">
+  <v-container class="px-15 px-md-2">
+    <h2 class="text-h5 font-weight-bold ml-0 mb-5">
+      探索熱門城市
+    </h2>
+    <div
+      class="card__wrapper d-flex justify-space-between"
+    >
       <template
         v-for="item in Items"
       >
@@ -10,7 +14,7 @@
           v-slot="{ hover }"
         >
           <v-card
-            class="card mx-1"
+            class="card"
             :class="{ 'on-hover': hover ,'expanded': expandIndex === item.id, 'notExpand':expandIndex !== item.id}"
             @mouseover="expandIndex = item.id"
           >
@@ -90,7 +94,7 @@ export default {
 <style  lang="scss" scoped>
 @import '../assets/scss/main.scss';
 .card__wrapper{
-  margin-left: -7.5px;
+  padding-right: 10px;
   position: relative;
   .chip__group{
     position: absolute;

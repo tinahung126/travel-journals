@@ -1,7 +1,7 @@
 <template>
   <v-container
     v-observe-visibility="visibilityChanged"
-    class="px-15"
+    class="px-15 px-md-2"
   >
     <v-row class="mx-auto">
       <v-col

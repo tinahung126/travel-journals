@@ -1,5 +1,8 @@
 <template>
-  <v-container class="banner__wrapper__pc">
+  <v-container class="banner__wrapper__pc px-15 px-md-2">
+    <h2 class="text-h5 font-weight-bold ml-0 mb-5">
+      最新旅遊優惠
+    </h2>
     <div>
       <VueSlickCarousel
         class="slick"
@@ -69,7 +72,6 @@ export default {
         touchThreshold: 2,
         slidesToScroll: 1,
         speed: 500,
-        variableWidth: true,
         touchMove: true
 
       },
@@ -84,9 +86,8 @@ export default {
 @import '../assets/scss/main.scss';
 .carousel__wrapper{
   position: relative;
-  padding-right: 5px;
   .img{
-    width: calc(100% - 5px);
+    width: calc(100% - 10px);
     height: 100%;
     border-radius: 5px;
     &::after{
@@ -132,7 +133,11 @@ export default {
   }
 
 }
-
+.slick{
+  .slick-slide{
+    padding-right: 0 !important;
+  }
+}
 .slick__img{
   width: 100%;
   height: 180px;

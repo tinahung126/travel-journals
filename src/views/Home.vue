@@ -19,7 +19,7 @@
       <TopCities class="d-none d-sm-block" />
       <TopCitiesMb class="d-block d-sm-none " />
       <TopProducts />
-      <section class="whykkday mt-16 pt-14 pb-8">
+      <section class="whykkday mt-16 pt-14 pb-8 d-none d-sm-block">
         <WhyKKday />
       </section>
       <FooterLinks />

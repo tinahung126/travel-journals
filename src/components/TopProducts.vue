@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container class="px-15 px-md-2">
     <h2
       class="text-h5 font-weight-bold ml-0 mb-5"
     >
@@ -9,8 +9,6 @@
     <VueSlickCarousel
       class="slick"
       :arrows="$vuetify.breakpoint.name !=='xs'"
-      :slides-to-show="size"
-      :slides-to-scroll="size"
       v-bind="settings"
     >
       <div
@@ -21,6 +19,7 @@
         <v-card
           class="mx-auto mb-4"
           rounded="5"
+          height="324px"
         >
           <v-img
             height="160"
@@ -144,7 +143,33 @@ export default {
         touchThreshold: 5,
         speed: 500,
         infinite: false,
-        touchMove: true
+        touchMove: true,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        responsive: [
+          {
+            breakpoint: 1264,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 3
+
+            }
+          },
+          {
+            breakpoint: 815,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2
+            }
+          },
+          {
+            breakpoint: 586,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+        ]
 
       }
 

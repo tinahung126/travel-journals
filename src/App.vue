@@ -30,7 +30,7 @@ export default {
   z-index: 999;
 }
 .slick-slide {
-  padding-right:12px !important;
+  padding-right:0px !important;
 }
 /* the parent */
 .slick-list{

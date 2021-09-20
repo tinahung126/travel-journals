@@ -21,17 +21,17 @@ h2{
   box-shadow: 0 0 4px rgb(0 0 0 / 20%);
   -webkit-box-shadow:0 0 4px rgb(0 0 0 / 20%);
 }
-  
-.custom {
-  clear: both;
+.container{
+  position: relative;
+  .custom {
   &.v-slide-group{
     display: block;
   }
   .v-slide-group__wrapper {
-    overflow: scroll !important;
+    
     width: 100%;
-    padding: 20px;
-    margin: -20px;
+    padding: 10px;
+    margin: -10px;
   }
   > .v-slide-group__next, .v-slide-group__prev{
     position: absolute;
@@ -49,14 +49,16 @@ h2{
     }
   }
   > .v-slide-group__next{      
-    right: -40px;
+    right: -50px;
   }
   > .v-slide-group__prev{
-    left: -40px;
+    left: -55px;
     z-index: 1;
     
   }
 }
+}
+
 .custom-arrow{
   position: absolute;
   background: white;
@@ -67,7 +69,7 @@ h2{
   display: flex;
   justify-content: center;
   &.slick-next{
-    right: -35px;
+    right: -45px;
   }
   &.slick-prev{
     left: -50px;

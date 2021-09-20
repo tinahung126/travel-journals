@@ -1,11 +1,10 @@
 <template>
-  <v-container>
+  <v-container class="px-15 px-md-2">
     <h2 class="text-h5 font-weight-bold ml-0">
       熱門活動分類
     </h2>
-
     <v-sheet
-      class=" category__wrapper pa-0"
+      class="category__wrapper pa-0"
       width="100%"
     >
       <v-slide-group
@@ -88,7 +87,9 @@ export default {
 </script>
 <style scoped lang="scss">
 @import '../assets/scss/main.scss';
-
+.container{
+  position: relative;
+}
  h2{
     margin-left: 4px;
   }
@@ -102,12 +103,12 @@ export default {
 
 .category__wrapper{
   flex-wrap: nowrap;
+  position: relative;
   &::-webkit-scrollbar {
     display: none;
   }
   .card{
     box-shadow: 0 2px 8px rgb(60 64 67 / 20%);
-
     .card__subtitle{
       font-size: 12px;
       font-weight: 700;
