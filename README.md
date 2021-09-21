@@ -3,6 +3,17 @@
 透過 Vue.js 及 Vuetify 所打造的網站，嘗試模仿 [KKday](https://www.kkday.com/zh-tw) 網站首頁切版及動畫特效。
 
 可查看 [Demo Link](https://tinahung126.github.io/travel-journals/#/)，目前呈現首頁畫面。
+
+## Project Demo 
+
+![kkday (1)](https://user-images.githubusercontent.com/69742330/134131576-58939d56-d380-4378-925b-4d2fca5ffaa4.png)
+## Project Tech
+* Vue.js
+* Vuetify
+* SCSS
+* CSS Animations
+* vue-slick-carousel
+
 ## Project setup
 ```
 npm install
