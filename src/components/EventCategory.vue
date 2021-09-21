@@ -80,6 +80,21 @@ export default {
           id: 6,
           title: '親子專區',
           img: 'https://image.kkday.com/v2/image/get/w_240%2Ch_144%2Cc_fill%2Cq_55%2Ct_webp/s1.kkday.com/campaign_1623/20210413042920_9Ro10/jpg'
+        },
+        {
+          id: 7,
+          title: '伴手禮',
+          img: 'https://image.kkday.com/v2/image/get/w_355%2Ch_266.25%2Cc_fill%2Cq_55%2Ct_webp/s1.kkday.com/campaign_1623/20210413042926_LayMM/jpg'
+        },
+        {
+          id: 8,
+          title: 'DIY課程',
+          img: 'https://image.kkday.com/v2/image/get/w_355%2Ch_266.25%2Cc_fill%2Cq_55%2Ct_webp/s1.kkday.com/campaign_1623/20210413042922_tlsH5/jpg'
+        },
+        {
+          id: 9,
+          title: '租車自駕',
+          img: 'https://image.kkday.com/v2/image/get/w_355%2Ch_266.25%2Cc_fill%2Cq_55%2Ct_webp/s1.kkday.com/campaign_1623/20210506074446_YiPHa/jpg'
         }
 
       ]
@@ -91,8 +106,8 @@ export default {
         case 'xs': return 140
         case 'sm': return 220
         case 'md': return 250
-        case 'lg': return 140
-        case 'xl': return 140
+        case 'lg': return 160
+        case 'xl': return 160
         default: return 140
       }
     }
