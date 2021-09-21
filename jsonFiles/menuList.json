@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "url": "activity",
+    "title": "戶外活動"
+  },
+  {
+    "id": 2,
+    "url": "city",
+    "title": "城市導覽"
+  },
+  {
+    "id": 3,
+    "url": "experience",
+    "title": "獨特體驗"
+  },
+  {
+    "id": 4,
+    "url": "food",
+    "title": "美食"
+  },
+  {
+    "id": 5,
+    "url": "hotel",
+    "title": "住宿"
+  },
+  {
+    "id": 6,
+    "url": "tickets",
+    "title": "熱門票券"
+  },
+  {
+    "id": 7,
+    "url": "tour",
+    "title": "一日遊 & 多日遊"
+  },
+  {
+    "id": 8,
+    "url": "traffic",
+    "title": "交通"
+  },
+  {
+    "id": 9,
+    "url": "wifi",
+    "title": "WiFi & SIM卡"
+  }
+]
