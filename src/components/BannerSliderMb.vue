@@ -74,7 +74,9 @@ export default {
 
 }
 }
-
+.slick{
+  cursor: pointer;
+}
 .slick-slide {
   padding-right:5px !important;
 }

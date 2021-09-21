@@ -67,6 +67,7 @@ export default {
 }
 
 .slick__item{
+  cursor: pointer;
   position: relative;
   &::after{
     position: absolute;

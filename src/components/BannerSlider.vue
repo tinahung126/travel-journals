@@ -134,6 +134,7 @@ export default {
 
 }
 .slick{
+  cursor: pointer;
   .slick-slide{
     padding-right: 0 !important;
   }

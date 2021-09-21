@@ -1,29 +1,31 @@
 <template>
   <v-container class="container pb-0">
-    <v-tabs
-      show-arrows
-      color="teal"
-      light
-      height="40px"
-      background-color="white"
-    >
-      <v-tabs-slider color="teal lighten-3 " />
-      <v-tab
-        v-for="item in menuItems"
-        :key="item.id"
-        class="py-2"
-        :ripple="false"
+    <v-sheet>
+      <v-tabs
+        show-arrows
+        color="teal"
+        light
+        height="40px"
+        background-color="white"
       >
-        <v-img
-          contain
-          height="18px"
-          width="18px"
-          :src="require(`../assets/icons/${item.url}.svg`)"
-          class="mr-1"
-        />
-        {{ item.title }}
-      </v-tab>
-    </v-tabs>
+        <v-tabs-slider color="teal lighten-3 " />
+        <v-tab
+          v-for="item in menuItems"
+          :key="item.id"
+          class="py-2"
+          :ripple="false"
+        >
+          <v-img
+            contain
+            height="18px"
+            width="18px"
+            :src="require(`../assets/icons/${item.url}.svg`)"
+            class="mr-1"
+          />
+          {{ item.title }}
+        </v-tab>
+      </v-tabs>
+    </v-sheet>
   </v-container>
 </template>
 

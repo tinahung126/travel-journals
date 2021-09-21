@@ -3,7 +3,7 @@
     class="main__container"
   >
     <section
-      class="mt-12 d-none d-sm-flex"
+      class="mt-12 d-none d-sm-block"
     >
       <MenuBar />
     </section>

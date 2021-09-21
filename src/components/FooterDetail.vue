@@ -54,7 +54,7 @@
       dark
       class="mt-2 mt-md-4"
     />
-    <p class="mt-4 mt-md-6 mb-0 mb-md-2 text-right grey--text text-body-2">
+    <p class="mt-4 mt-md-6 mb-0 mb-md-2  pr-5 text-right grey--text text-body-2">
       COPYRIGHT © 2021 KKday All rights reserved.
     </p>
   </div>

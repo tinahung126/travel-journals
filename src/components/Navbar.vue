@@ -58,16 +58,51 @@
               <v-list-item
                 v-bind="attrs"
                 class="menu__list"
+                :disabled="i === 0||i === 4"
                 v-on="on"
               >
                 <v-list-item-title
                   dense
-
-                  class="grey--text text--darken-1"
+                  :class="{'cyan--text text--darken-1': i === 0, 'grey--text text--darken-1': i !== 0,'order-md-1': i === 0}"
                   v-text="item.title"
                 />
+
+                <v-icon
+                  small
+                  class="menu__icon"
+                  :class="{'order-md-0': i === 0}"
+                  :color=" i === 0 ? 'cyan darken-1':'grey darken-1'"
+                >
+                  {{ item.details ? 'mdi-chevron-down': item.icon }}
+                </v-icon>
               </v-list-item>
             </template>
+            <v-card
+              v-if="i===3"
+              class="dropdown-list text-center pt-10"
+              width="400px"
+            >
+              <v-img
+                max-width="120px"
+                class="text-center mx-auto"
+                src="https://cdn.kkday.com/pc-web/assets/img/empty_state/shopping_cart.svg"
+              />
+              <v-card-text class="mb-5  text-subtitle-2 grey--text font-weight-bold">
+                您的購物車是空的
+              </v-card-text>
+              <v-divider />
+
+              <v-card-actions>
+                <span class=" ml-2 text-subtitle-1 grey--text">共 0 件商品</span>
+                <v-spacer />
+                <v-btn
+                  color="cyan"
+                  dark
+                >
+                  查看購物車
+                </v-btn>
+              </v-card-actions>
+            </v-card>
             <v-list
               v-if="item.details"
               class="dropdown-list d-flex"
@@ -104,10 +139,10 @@
       <v-list>
         <v-list-item-group
           v-model="group"
-          active-class="deep-purple--text text--accent-4"
+          active-class="cyan--text"
         >
           <v-list-item
-            v-for="item in ($vuetify.breakpoint.name ==='xs'? listItems : smSizeListItems)"
+            v-for="item in ($vuetify.breakpoint.name ==='xs'? listItems : smDrawer)"
             :key="item.id"
             class="px-4"
           >
@@ -118,7 +153,10 @@
               {{ item.title }}
             </v-list-item-title>
           </v-list-item>
-          <v-list-item class="cyan--text text--darken-3">
+          <v-list-item
+            v-if="$vuetify.breakpoint.name !=='xs'"
+            class="cyan--text text--darken-3"
+          >
             <v-icon
               small
               color="cyan darken-3"
@@ -141,7 +179,18 @@ export default {
     drawer: false,
     isScroll: false,
     group: null,
-    smSizeListItems: [{ title: '註冊/登入' }, { title: 'TWD', details: ['USD 美元', 'JPY 日圓', 'KRW 韓圓', 'THB 泰銖'] }, { title: '繁體中文', details: ['English', '日本語', '한국어', 'ไทย'] }],
+    smSizeListItems: [
+      { title: '下載 App 享優惠', icon: 'mdi-cellphone' },
+      { title: '繁體中文', details: ['English', '日本語', '한국어', 'ไทย'] },
+      { title: 'TWD', details: ['USD 美元', 'JPY 日圓', 'KRW 韓圓', 'THB 泰銖'] },
+      { icon: 'mdi-cart-outline' },
+      { title: '註冊/登入' }
+    ],
+    smDrawer: [
+      { title: '繁體中文', details: ['English', '日本語', '한국어', 'ไทย'] },
+      { title: 'TWD', details: ['USD 美元', 'JPY 日圓', 'KRW 韓圓', 'THB 泰銖'] },
+      { title: '註冊/登入' }
+    ],
     listItems: [
       {
         id: 1,
@@ -186,6 +235,7 @@ export default {
 .logo{
   height: 48px;
 }
+
 .close-btn{
   position: relative;
   &::after{
@@ -205,10 +255,10 @@ export default {
   margin-top: 3px;
 
 }
-.my-menu::before {
+.my-menu::after {
   position: absolute;
   content: "";
-  top: 0;
+  top: 1px;
   right: 10px;
   transform: translateY(-100%);
   width: 10px;

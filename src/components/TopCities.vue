@@ -108,6 +108,7 @@ export default {
   }
   .card{
     width: calc((100% / 6 - 8px) * 2);
+    cursor: pointer;
     img{
       margin: 0 -4px;
     }

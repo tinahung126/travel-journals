@@ -247,8 +247,8 @@ export default {
       right: 0;
     }
   }
-
 }
+
 // Hover effect
 .v-card {
   opacity: 1;

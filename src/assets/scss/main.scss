@@ -1,5 +1,6 @@
 $border-gray: #EEEEEE;
 $btn-gray: #aaa;
+$link-grey:#757575;
 $bg-gray:#f5f5f5;
 $cyan:#00BCD4;
 $yellow:#FFB400;
@@ -14,12 +15,28 @@ h2{
   font-weight: 400;
   margin: 10px 0 6px 0;
 }
+.slick{
+  cursor: pointer;
+}
+.hero__container{
+  .v-input__icon{
+    height: auto;
+  }
+}
+.menu__icon{
+  &.v-icon.v-icon{
+    line-height: 40px !important;
+  }
+}
 .v-btn{
   cursor: pointer;
 }
 .card-shadow{
   box-shadow: 0 0 4px rgb(0 0 0 / 20%);
   -webkit-box-shadow:0 0 4px rgb(0 0 0 / 20%);
+}
+.v-select.v-select--is-menu-active .v-input__icon--append .v-icon{
+  transform: rotate(0deg) !important;
 }
 .container{
   position: relative;
@@ -90,7 +107,10 @@ h2{
   }
 }
 @media screen and (min-width: 600px) {
-  .v-slide-group__wrapper{
+  .category{
+    .v-slide-group__wrapper{
     overflow: visible !important;
+    }
   }
+  
 }

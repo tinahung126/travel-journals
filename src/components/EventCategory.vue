@@ -1,6 +1,9 @@
 <template>
-  <v-container class="px-3 px-sm-15 px-md-2">
-    <h2 class="text-sm-h5 font-weight-sm-bold ml-0">
+  <v-container class="category px-3 px-sm-15 px-md-2">
+    <h2 class="ml-0 d-block d-sm-none">
+      熱門活動分類
+    </h2>
+    <h2 class="text-h5 font-weight-bold ml-0 d-none d-sm-block">
       熱門活動分類
     </h2>
     <v-sheet
@@ -22,8 +25,7 @@
               class="card pa-0 ml-0"
               :class="{ 'on-hover': !hover }"
               elevation="6"
-              :width="$vuetify.breakpoint.xs ? 140 : 200"
-              :height="$vuetify.breakpoint.xs ? 150 : 200"
+              :width="width"
             >
               <v-img
                 :src="item.img"
@@ -82,6 +84,18 @@ export default {
 
       ]
     }
+  },
+  computed: {
+    width () {
+      switch (this.$vuetify.breakpoint.name) {
+        case 'xs': return 140
+        case 'sm': return 220
+        case 'md': return 250
+        case 'lg': return 140
+        case 'xl': return 140
+        default: return 140
+      }
+    }
   }
 }
 </script>
@@ -109,7 +123,8 @@ export default {
     display: none;
   }
   .card{
-    box-shadow: 0 2px 8px rgb(60 64 67 / 20%);
+    box-shadow: 0 8px 20px 0 rgb(0 0 0 / 10%) !important;
+    cursor: pointer;
     .card__subtitle{
       font-size: 12px;
       font-weight: 700;

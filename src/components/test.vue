@@ -18,9 +18,13 @@
       <div class="hero__container__search__searchbar">
         <SearchBar class="d-flex d-sm-none" />
         <v-autocomplete
+          v-model="selected"
           class="hero__container__search__searchbar__auto d-none d-sm-flex mx-auto "
           :items="searchCities"
+          :loading="isLoading"
+          :search-input.sync="search"
           hide-details
+          hide-selected
           clearable
           label="輸入目的地、景點、體驗行程或活動名稱..."
           solo
@@ -45,6 +49,7 @@
                       <v-list-item
                         v-for="(city,i) in item.hotCities"
                         :key="i"
+                        :selected="city.selected"
                       >
                         {{ city }}
                         <v-icon

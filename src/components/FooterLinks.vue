@@ -14,7 +14,7 @@
         <li
           v-for="(city,j) in item.cities"
           :key="j"
-          class="country__city text-caption grey--text text--darken-1 mb-3"
+          class="country__city text-caption mb-3"
         >
           <span>{{ city }}</span>
         </li>
@@ -86,7 +86,13 @@ export default {
 }
 
 li{
+  cursor: pointer;
   list-style-type:none;
+  color: $link-grey;
+  transition: color 0.15s ease-in;
+  &:hover{
+    color: $cyan !important;
+  }
   span{
     position: relative;
     &::after{
